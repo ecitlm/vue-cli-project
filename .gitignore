@@ -1,0 +1,14 @@
+.DS_Store
+
+node_modules/
+
+dist/
+dist_test/
+
+npm-debug.log
+
+yarn-debug.log
+.idea
+/
+.vscode
+/

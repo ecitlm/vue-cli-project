@@ -1,0 +1,80 @@
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+  [data-dpr='2'] & {
+    font-size: $font-size * 2;
+  }
+  [data-dpr='3'] & {
+    font-size: $font-size * 3;
+  }
+  //下版注意加上line-hegiht:100%
+}
+
+@mixin lin-dpr ($height) {
+  line-height: $height;
+  [data-dpr='2'] & {
+    line-height: $height * 2;
+  }
+  [data-dpr='3'] & {
+    line-height: $height * 3;
+  }
+}
+
+@mixin width-dpr($width) {
+  width: $width;
+  [data-dpr='2'] & {
+    width: $width * 2;
+  }
+  [data-dpr='3'] & {
+    width: $width * 3;
+  }
+}
+
+@mixin height-dpr($height) {
+  height: $height;
+  [data-dpr='2'] & {
+    height: $height * 2;
+  }
+  [data-dpr='3'] & {
+    height: $height * 3;
+  }
+}
+@mixin img-dpr($imgSrc,$bigImgSrc){
+  background: url($imgSrc) no-repeat 0 0;
+  background-size:contain;
+  [data-dpr='3'] & {
+    background: url($imgSrc) no-repeat 0 0;
+    background-size: contain;
+  }
+}
+@mixin setSize($width,$height){
+  width:$width;
+  height:$height;
+}
+@mixin setColor($color:$color-black,$bgcolor:$color-white){
+  color: $color;
+  background-color: $bgcolor;
+}
+@mixin setRadius($radius){
+  border-radius: $radius;
+}
+@mixin setButton($width,$height,$color,$bgcolor,$radius){
+  @include setSize($width,$height);
+  @include setColor($color,$bgcolor);
+  @include font-dpr(16px);
+  @include setRadius($radius);
+  &:active{
+    background-color: ($bgcolor,$color-amount);
+  }
+}
+@mixin setBtnColor($color,$bgcolor){
+  @include setColor($color,$bgcolor);
+  &:active{
+    @include setColor($color,darken($bgcolor,$color-amount));
+  }
+}
+@mixin hideAppearance{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance:none;
+}
+

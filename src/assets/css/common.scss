@@ -1,0 +1,263 @@
+@import "tools";
+//@import "./realNameBar";
+
+*,
+*:before,
+*:after {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  outline:0;
+  -webkit-text-size-adjust:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+  height: 100%;
+  overflow: hidden;
+  background:#f8f8f8;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+}
+
+textarea{
+  resize: none;
+  appearance: none;
+}
+
+input{
+  border: 0;
+  appearance: none;
+}
+
+::-webkit-input-placeholder {
+  //display: block;
+  //font-size: 14px;
+  color: #E4E4E4;
+}
+
+select {
+  appearance: none;
+  background-color: #fff;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// 自定义字体
+
+@font-face {
+  font-family: 'Medium';
+  src: url(../fonts/Medium.otf);
+}
+
+.font-suiguanjia{
+  font-family: 'Medium';
+  src: url(../fonts/Medium.otf);
+
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+::-webkit-scrollbar {/*隐藏滚轮*/
+  display: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.wrapper-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: px2rem375(343px);
+  height: px2rem375(44px);
+  background-image: linear-gradient(0deg, #FFA21A 0%, #FFAF1F 100%);
+  box-shadow: 0 px2rem375(3px) px2rem375(10px) 0 rgba(255,167,28,0.50);
+  border-radius: px2rem375(4px);
+  font-size: 16px;
+  color: #FFFFFF;
+
+  &.disabled {
+    background-image: none;
+    background-color: #FFDBAC;
+  }
+}
+
+.bb1 {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    background-color: #e4e4e4;
+  }
+}
+
+// mint-ui
+
+.mint-actionsheet-listitem,
+.mint-actionsheet-button {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+  color: #666;
+  border: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    background-color: #e4e4e4;
+  }
+
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.picker-slot.picker-slot-divider {
+  color: #999;
+}
+
+.picker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 16px!important;
+  color: #ccc;
+  white-space: normal;
+}
+
+.mint-toast{
+  padding: 8px 16px!important;
+  max-width: 270px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  z-index: 9999 !important;
+
+}
+
+.mint-toast-text {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+// error-page
+
+// 错误提示页面
+.errorPage{
+  width: 100%;
+  height: 100%;
+  padding-top: px2rem375(24px);
+  background-color: #fff;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+
+  &-img {
+    display: block;
+    width: px2rem375(160px);
+    height: px2rem375(160px);
+    margin: 0 auto;
+  }
+
+  &-title {
+    margin: px2rem375(24px) auto px2rem375(16px);
+    width: px2rem375(280px);
+    text-align: center;
+    font-size: 15px;
+    color: #333333;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &-text {
+    margin: 0 auto;
+    padding: 0 px2rem375(16px) px2rem375(32px);
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+    line-height: 20px;
+  }
+
+  &-tip {
+    margin: px2rem375(12px) auto;
+    font-size: 13px;
+    color: #CCCCCC;
+    text-align: center;
+  }
+}
