@@ -10,7 +10,7 @@ window.setTitle = (title) => {
   if (/iphone|ipad|ipod/.test(mobile)) {
     var iframe = document.createElement('iframe')
     iframe.style.display = 'none'
-    iframe.setAttribute('src', '//res.cardniu.com/loancentre/image/req.gif')
+    iframe.setAttribute('src', '//cdn.it919.cn/image/req.gif')
     var iframeCallback = function () {
       setTimeout(function () {
         iframe.removeEventListener('load', iframeCallback)
