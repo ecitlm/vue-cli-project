@@ -15,9 +15,6 @@
     "transform-vue-jsx",
     "transform-runtime",
     ["component", [{
-      "libraryName": "mint-ui",
-      "libraryDirectory": "lib",
-      "style": "css"
     }]]
   ]
 }

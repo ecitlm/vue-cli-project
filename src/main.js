@@ -21,20 +21,16 @@ Vue.use(vueTap)
 
 Vue.prototype.$api = api
 
-// const FastClick = require('fastclick')
-// FastClick.attach(document.body)
-
 Vue.prototype.$toast = Toast
-// Vue.component(Picker.name, Picker)
 
 Vue.config.productionTip = false
 
 // 非正式环境添加vconsole调试
-// if (process.env.NODE_ENV === 'development') {
-//   let VConsole = require('vconsole')
-//   let vConsole = new VConsole()
-//   console.log(`vconsole version: ${vConsole.version}`)
-// }
+if (process.env.NODE_ENV === 'development') {
+  let VConsole = require('vconsole')
+  let vConsole = new VConsole()
+  console.log(`vconsole version: ${vConsole.version}`)
+}
 
 // 测试环境下启用mockjs
 if (process.env.NODE_ENV === 'development') {
