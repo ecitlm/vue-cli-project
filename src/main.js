@@ -3,22 +3,17 @@ import Vue from 'vue'
 import store from './store/index'
 import App from './App'
 import router from './router'
-import '@/service/filter'
+// filter过滤器
+import '@/filter/filter'
 
 // window公用方法
 import '@/assets/js/window-common.js'
 // vue公用方法
 import '@/assets/js/vue-prototype.js'
-// 大数据收集JS
 import Toast from './ui-lib/toast'
 // 公共css文件
 import './assets/css/common.scss'
 import api from './service/http'
-
-import vueTap from 'v-tap'
-
-Vue.use(vueTap)
-
 Vue.prototype.$api = api
 
 Vue.prototype.$toast = Toast

@@ -11,8 +11,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        // target: 'http://172.22.22.157:8080/zyxfxjd_service/',  // string
-        target: 'http://test.it919.cn/zyxfxjd_service/',  // 外网
+        // target: 'http://192.168.1.11:8080/api/',  // string
+        target: 'http://test.it919.cn/api/', // 外网
         changeOrigin: true,
         /* pathRewrite: {
           '^/api': ''
@@ -59,7 +59,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist_test'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/appwl/sswlh5/',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps
@@ -90,7 +90,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/appwl/sswlh5/',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps

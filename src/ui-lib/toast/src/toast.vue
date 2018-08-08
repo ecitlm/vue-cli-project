@@ -1,7 +1,7 @@
 <template>
-  <transition name="sswl-toast-pop">
-    <div class="sswl-toast" v-show="visible">
-      <div class="sswl-toast-text">{{ message }}</div>
+  <transition name="ui-toast-pop">
+    <div class="ui-toast" v-show="visible">
+      <div class="ui-toast-text">{{ message }}</div>
     </div>
   </transition>
 </template>
@@ -20,7 +20,7 @@
 </script>
 
 <style scoped lang="scss">
-  .sswl-toast {
+  .ui-toast {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,8 +46,8 @@
     }
   }
 
-  .sswl-toast-pop-enter,
-  .sswl-toast-pop-leave-active {
+  .ui-toast-pop-enter,
+  .ui-toast-pop-leave-active {
     opacity: 0
   }
 </style>
