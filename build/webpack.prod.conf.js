@@ -57,7 +57,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
-      allChunks: false,
+      allChunks: false
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
@@ -72,6 +72,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index_build.html',
+      publishTime: new Date(),
+      version: 'production',
       inject: false,
       minify: {
         removeComments: true,
@@ -88,7 +90,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           let res = babel.transform(text, options).code
           return gulifyJS.minify(res).code
         }, // 压缩页面JS
-        minifyCSS: true, // 压缩页面CSS
+        minifyCSS: true // 压缩页面CSS
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
@@ -168,27 +170,3 @@ if (config.build.bundleAnalyzerReport) {
 }
 
 module.exports = webpackConfig
-
-Promise.resolve()
-  // 请求拦截器
-  .then(() => {
-
-  }, () => {
-
-  })
-  // ajax
-  .then(() => {
-
-  }, () => {
-
-  })
-  // 失败拦截器
-  .then(() => {
-    // 这里要不要reject
-  }, () => {
-
-  })
-  // 我们的错误回调
-  .catch(err=>{
-
-  })

@@ -56,14 +56,19 @@ const webpackConfig = merge(baseWebpackConfig, {
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
-      allChunks: false,
+      allChunks: false
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
-      cssProcessorOptions: config.build_test.productionSourceMap
-        ? { safe: true, map: { inline: false } }
-        : { safe: true }
+      cssProcessorOptions: config.build_test.productionSourceMap ? {
+        safe: true,
+        map: {
+          inline: false
+        }
+      } : {
+        safe: true
+      }
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -71,6 +76,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: config.build_test.index,
       template: 'index_build.html',
+      publishTime: new Date(),
+      version: 'test',
       inject: false,
       minify: {
         removeComments: true,
@@ -79,7 +86,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         minifyJS: function (text, inline) {
           let options = {
             'presets': [
-              ['env', {'modules': false}]
+              ['env', {
+                'modules': false
+              }]
             ]
           }
           let babel = require('babel-core')
@@ -87,7 +96,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           let res = babel.transform(text, options).code
           return gulifyJS.minify(res).code
         }, // 压缩页面JS
-        minifyCSS: true, // 压缩页面CSS
+        minifyCSS: true // 压缩页面CSS
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
@@ -129,13 +138,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build_test.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../static'),
+      to: config.build_test.assetsSubDirectory,
+      ignore: ['.*']
+    }])
   ]
 })
 

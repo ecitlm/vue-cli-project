@@ -6,16 +6,18 @@
   <meta http-equiv="Cache-Control" CONTENT="no-cache,no-store, must-revalidate">
   <meta http-equiv="pragma" CONTENT="no-cache">
   <meta http-equiv="expires" CONTENT="0">
+  <meta http-equiv="Publish-Date" content="<%= htmlWebpackPlugin.options.publishTime %>">
+  <meta http-equiv="Publish-Version" content="<%= htmlWebpackPlugin.options.version %>">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <title>Vue-cli</title>
   <script>
     window.actCode = 'vue_product_';
-    (function flexible (window, document) {
+    (function flexible(window, document) {
       var docEl = document.documentElement
       var dpr = window.devicePixelRatio || 1
 
       // adjust body font size
-      function setBodyFontSize () {
+      function setBodyFontSize() {
         if (document.body) {
           document.body.style.fontSize = 12 + 'px'
         } else {
@@ -25,7 +27,7 @@
       setBodyFontSize()
 
       // set 1rem = viewWidth / 10
-      function setRemUnit () {
+      function setRemUnit() {
         var curWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth
         var rem = curWidth / 10
         docEl.style.fontSize = rem + 'px'
@@ -54,6 +56,7 @@
         docEl.removeChild(fakeBody)
       }
     }(window, document))
+
   </script>
   <% for (var index in htmlWebpackPlugin.files.css) { %>
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[index] %>" crossorigin="anonymous" />
