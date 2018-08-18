@@ -1,6 +1,4 @@
 @import "tools";
-//@import "./realNameBar";
-
 *,
 *:before,
 *:after {
@@ -15,7 +13,6 @@
 html {
   margin: 0 auto;
   width: 100%;
-  max-width: 750px;
   height: 100%;
   overflow: hidden;
   background:#f8f8f8;
@@ -85,18 +82,6 @@ a {
 }
 
 // 自定义字体
-
-@font-face {
-  font-family: 'Medium';
-  src: url(../fonts/Medium.otf);
-}
-
-.font-suiguanjia{
-  font-family: 'Medium';
-  src: url(../fonts/Medium.otf);
-
-}
-
 .clearfix:after {
   content: '';
   display: block;
