@@ -9,10 +9,10 @@ for (const path of arrRoutes) {
   oRoutes[path.slice(path.lastIndexOf('/') + 1)] = resolve => {
     store.dispatch('showLoading')
     import(`@/page/${path}`)
-    .then(module => {
-      store.dispatch('hideLoading')
-      resolve(module)
-    })
+      .then(module => {
+        store.dispatch('hideLoading')
+        resolve(module)
+      })
       .catch((err) => {
         console.log(err)
         store.dispatch('hideLoading')
