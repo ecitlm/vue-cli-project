@@ -7,7 +7,7 @@
 export default {
   data () {
     return {
-      msg: 'Login'
+      msg: 'this is a Login page'
     }
   },
   computed: {
@@ -22,3 +22,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  h3{
+    font-size: 60px;
+    text-align: center;
+    padding: 100px 0;
+  }
+</style>

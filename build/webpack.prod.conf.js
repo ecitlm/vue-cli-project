@@ -140,8 +140,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
     new ZipPlugin({
-      path: path.join(__dirname, '../dist'),
-      filename: 'standard.zip'
+      path: path.join(__dirname, '../'),
+      filename: 'dist_prod.zip'
     })
   ]
 })

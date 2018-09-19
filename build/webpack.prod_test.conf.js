@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const ZipPlugin = require('zip-webpack-plugin')
 
 const env = require('../config/prod_test.env')
 
@@ -83,7 +84,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
-        minifyJS: function (text, inline) {
+        minifyJS: function(text, inline) {
           let options = {
             'presets': [
               ['env', {
@@ -110,7 +111,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks (module) {
+      minChunks(module) {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
@@ -142,7 +143,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       from: path.resolve(__dirname, '../static'),
       to: config.build_test.assetsSubDirectory,
       ignore: ['.*']
-    }])
+    }]),
+    new ZipPlugin({
+      path: path.join(__dirname, '../'),
+      endPath: `../`,
+      filename: 'dist_test.zip'
+    })
   ]
 })
 

@@ -19,7 +19,7 @@ Vue.prototype.$toast = Toast
 Vue.config.productionTip = false
 
 // 非正式环境添加vconsole调试
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   let VConsole = require('vconsole')
   let vConsole = new VConsole()
   console.log(`vconsole version: ${vConsole.version}`)
