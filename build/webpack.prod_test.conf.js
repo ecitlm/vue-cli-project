@@ -76,7 +76,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build_test.index,
-      template: 'index_build.html',
+      template: 'index.html',
       publishTime: new Date(),
       version: 'test',
       inject: false,
