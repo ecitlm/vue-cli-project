@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" CONTENT="no-cache,no-store, must-revalidate">
   <meta http-equiv="pragma" CONTENT="no-cache">
   <meta http-equiv="expires" CONTENT="0">
-  <meta http-equiv="Publish-Date" content="<%= htmlWebpackPlugin.options.publishTime %>">
+  <meta http-equiv="Publish-Date" content="<%= new Date() %>">
   <meta http-equiv="Publish-Version" content="<%= htmlWebpackPlugin.options.version %>">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <title>Vue-cli</title>
@@ -59,16 +59,19 @@
 
   </script>
   <% for (var index in htmlWebpackPlugin.files.css) { %>
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[index] %>" crossorigin="anonymous" />
-    <% } %>
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[index] %>" crossorigin="anonymous" />
+  <% } %>
 </head>
 
 <body ontouchstart="">
   <div id="app"></div>
-  <script src=//cdn.it919.cn/vue@2.5.9-vue-router@3.0.1-vuex@3.0.1-axios@0.17.1-es6-promise@4.1.1.js></script>
-  <% for (var index in htmlWebpackPlugin.files.js) { %>
-    <script src="<%= htmlWebpackPlugin.files.js[index] %>" crossorigin="anonymous"></script>
-    <% } %>
+  <script src=//cdn.it919.cn/vue@2.5.9-vue-router@3.0.1-vuex@3.0.1-axios@0.17.1-es6-promise@4.1.1.js> </script> <% for
+    (var index in htmlWebpackPlugin.files.js) { %>
+    < script src = "<%= htmlWebpackPlugin.files.js[index] %>"
+    crossorigin = "anonymous" >
+
+  </script>
+  <% } %>
 </body>
 
 </html>
