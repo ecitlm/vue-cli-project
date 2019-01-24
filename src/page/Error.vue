@@ -5,7 +5,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  export default{
+  export default {
     data () {
       return {
         code: ''
